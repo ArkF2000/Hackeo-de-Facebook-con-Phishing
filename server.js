@@ -4,7 +4,9 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+//const port = 3000;
+const port = process.env.PORT || 3000; // Cambiado para que funcione en Render
+
 
 // Configurar middlewares
 app.use(cors());
